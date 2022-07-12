@@ -1,0 +1,27 @@
+{
+  "name": "awesome-books-es6",
+  "version": "1.0.0",
+  "description": "In this project, I will restructure my Awesome books app code. The goal is to make it more organized by using modules.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/29td/Awesome-Books-Es6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/29td/Awesome-Books-Es6/issues"
+  },
+  "homepage": "https://github.com/29td/Awesome-Books-Es6#readme",
+  "dependencies": {
+    "luxon": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/luxon": "^2.3.2"
+  }
+}
