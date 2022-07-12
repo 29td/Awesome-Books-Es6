@@ -1,6 +1,7 @@
 # Awesome-Books-Es6
 
-In this project, I will restructure my Awesome books app code. The goal is to make it more organized by using modules.   * Allows the user to add a book.
+In this project, I will restructure my Awesome books app code. The goal is to make it more organized by using modules.   
+* Allows the user to add a book.
 * Allows a user to delete or remove a book.
 
 ## Built With
@@ -13,7 +14,7 @@ In this project, I will restructure my Awesome books app code. The goal is to ma
 ### Getting Started
 For you to get a local template, please follow the folowing prerequisite steps:
 
-Access the live source on - [Live Demo](https://github.com/Carshy/Awesome-Books)
+Access the live source on - [Live Demo](https://github.com/29td/Awesome-Books-Es6/tree/books-with-es6)
 Copy the **https** or **SSH** address on the code
 Clone the repository using your favorite code editor   
 
