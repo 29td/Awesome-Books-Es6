@@ -8,6 +8,14 @@
     font-family: 'poppins', sans-serif;
   }
   
+  .Date-Time {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      margin-left: 800px;
+
+  }
+
   .navbar-section {
     background-color: #fff;
     display: flex;

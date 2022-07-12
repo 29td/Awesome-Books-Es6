@@ -1,84 +1,8 @@
 /* eslint-disable max-classes-per-file */
-export * as indexJs  from "module";
-
-// Book Class
-class Book {
-    constructor(title, author) {
-      this.title = title;
-      this.author = author;
-    }
-  }
-  
-  // Store Class: Handles local storage of books
-  class Storage {
-    // Receives Books
-    static getBooks() {
-      let books;
-      if (localStorage.getItem('books') === null) {
-        books = [];
-      } else {
-        books = JSON.parse(localStorage.getItem('books'));
-      }
-      return books;
-    }
-  
-    // Event: Adds Books
-  
-    static addBook(book) {
-      const books = Storage.getBooks();
-      books.push(book);
-      localStorage.setItem('books', JSON.stringify(books));
-      window.location.reload();
-    }
-  
-  // Event remove a Book
-    static removeBook(title) {
-      const books = Storage.getBooks();
-  
-      books.forEach((book, index) => {
-        if (book.title === title) {
-          books.splice(index, 1);
-        }
-      });
-  
-      localStorage.setItem('books', JSON.stringify(books));
-    }
-  }
-  
-  // UI Class: Displays listed Books
-  class UI {
-    static displayBooks() {
-      const books = Storage.getBooks();
-      books.forEach((book) => UI.addBookToList(book));
-    }
-  
-    static addBookToList(book) {
-      const list = document.querySelector('#book-collection');
-      const addedbook = document.createElement('div');
-      addedbook.innerHTML = `
-          <div class="display-collection">
-            <p class="book-info">${book.title}</p>
-            <p class="book-info" id="book-info-author"><span>by</span>${book.author}</p>
-            <button type="submit" class="delete">Remove</button>
-            <hr>
-          </div>
-          `;
-      list.appendChild(addedbook);
-    }
-  
-    // Event: Deletes a Book
-    static deleteBook(el) {
-      if (el.classList.contains('delete')) {
-        el.parentElement.remove();
-      }
-    }
-  
-    // Event: Clears data
-    static clearFields() {
-      document.querySelector('#title').value = '';
-      document.querySelector('#author').value = '';
-    }
-  }
+import Book from './modules/form.js';
+import Storage from './modules/storage.js';
+import UI from './modules/UI.js';
+import { DateTime } from './modules/luxon.js';  
   
   document.addEventListener('DOMContentLoaded', UI.displayBooks);
   document.querySelector('#form').addEventListener('submit', () => {
@@ -101,7 +25,7 @@ class Book {
   Storage.removeBook(e.target.previousElementSibling.previousElementSibling.textContent);
   });
   
-  // *****************Variables for targetting "bookList, "addaBook", and "contactDetails"***************
+//   // *****************Variables for targetting "bookList, "addaBook", and "contactDetails"***************
   const bookCollection = document.querySelector('#book-collection');
   const addaBook = document.querySelector('#add-books');
   const contactDetails = document.querySelector('#contact-display');
@@ -150,12 +74,12 @@ class Book {
 // importing date and time
 const DateAndTime = document.querySelector('.Date-Time');
 
-import { DateTime } from "luxon";
 const DateT = DateTime.now();
 DateAndTime.innerHTML = ` ${DateT.toLocaleString({
 year: "numeric",
-month: "long",   
 day: "numeric",
+month: "long",   
+hour: "numeric",
 minute: "numeric",      
 second: "numeric"   
 })}
